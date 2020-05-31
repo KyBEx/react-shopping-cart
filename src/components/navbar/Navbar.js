@@ -1,5 +1,6 @@
 import React, {useState} from "react";
-import { Menu, Search, Icon } from 'semantic-ui-react'
+import { Menu, Search, Icon } from 'semantic-ui-react';
+import "./Navbar.css";
 
 export default function Navbar() {
     const [activeItem, setActiveItem] = useState("");
@@ -29,12 +30,14 @@ export default function Navbar() {
           name='search'
           active={activeItem === 'search'}
           onClick={handleClick}
+          className='navbar-search-width'
         >
           <Search
-        
+            
           />
           
         </Menu.Item>
+        <Menu.Menu position="right">
         <Menu.Item
           name='shoppingcart'
           active={activeItem === 'shoppingcart'}
@@ -56,6 +59,9 @@ export default function Navbar() {
         >
           Sign Up
         </Menu.Item>
+
+        </Menu.Menu>
+       
       </Menu>
     )
 }
