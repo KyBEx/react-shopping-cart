@@ -4,12 +4,11 @@ import "./Navbar.css";
 
 export default function Navbar() {
     const [activeItem, setActiveItem] = useState("");
-    function handleClick(event) {
-        console.log('clicking', event.target)
-        setActiveItem(event.taret.name)
+    function handleClick(event, {name}) {
+        setActiveItem(name)
     }
     return (
-        <Menu>
+        <Menu className="App-menu">
         <Menu.Item
           name='home'
           active={activeItem === 'home'}

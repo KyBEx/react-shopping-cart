@@ -7,6 +7,19 @@
   pointer-events: none;
 }
 
+.App-menu {
+  background-color: darkcyan !important;
+}
+
+.App-menu a {
+  color: white !important;
+}
+
+.App-menu a:hover, .App-menu a.active.item {
+  background-color: rgba(0,0,0,.2) !important;
+}
+
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
