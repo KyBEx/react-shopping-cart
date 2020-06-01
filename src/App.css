@@ -37,8 +37,17 @@
 .App-background-container {
   text-align: center;
   padding-bottom: 3em;
-  background: darkcyan;
+  background: cornflowerblue;
   height: 100%;
+}
+
+.App-image-size-big {
+  height: 10rem;
+}
+
+.App-image-position {
+  position: relative;
+  left: 20px;
 }
 
 @keyframes App-logo-spin {

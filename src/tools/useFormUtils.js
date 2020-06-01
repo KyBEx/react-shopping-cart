@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
-export default function formUtils(
+export default function useFormUtils(
   validFormFields = [],
   defaultValues = {},
   dynamicFormFields = {},
@@ -77,7 +77,10 @@ export default function formUtils(
     reset();
     if (Object.keys(dynamicFormFields).length) {
       validFormFields.forEach((key) => {
-        dynamicFormFields[key] === false ? null : registerWrapper[key]();
+        if (dynamicFormFields[key] !== false) {
+          registerWrapper[key]()
+        }
+        // dynamicFormFields[key] === false ? null : registerWrapper[key]();
       });
     } else {
       validFormFields.forEach((key) => {
