@@ -1,13 +1,14 @@
 import React from "react";
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { Login } from "./components";
+import { Login, Register } from "./components";
 
 const App = () => {
   return (
     <Router>
       <Switch>
-        <Route path="/" component={Login} />
+        <Route path="/" exact component={Login} />
+        <Route path="/register" component={Register} />
       </Switch>
     </Router>
   );
