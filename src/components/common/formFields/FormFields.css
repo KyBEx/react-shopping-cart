@@ -1,0 +1,23 @@
+.error-wrapper {
+    /* height: 2rem; */
+    display: flex;
+    margin-top: 0.5em;
+  }
+  
+  .error-wrapper .ui.pointing.label {
+    margin-top: 0em;
+  }
+  
+  .form-input-wrapper {
+    background: white;
+    border-radius: 4px;
+  }
+  
+  .form-field-valid-icon {
+    color: green;
+  }
+  
+  .form-field-invalid-icon {
+    color: red;
+  }
+  
