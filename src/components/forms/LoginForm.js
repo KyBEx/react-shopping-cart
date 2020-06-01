@@ -1,5 +1,5 @@
 import React from "react";
-import TextInput from "../common/formFields/TextInput"
+import { TextInput } from "../common";
 import PropTypes from "prop-types";
 import { Form, Button } from "semantic-ui-react";
 import FormUtils from "../../tools/useFormUtils";

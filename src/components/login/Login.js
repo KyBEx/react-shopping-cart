@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { LoginForm } from "../forms";
 import logo from "../../assets/padlock.png";
-import Error from "../common/error/Error";
+import { Error } from "../common";
 export default function Login() {
   const [submitting, setSubmitting] = useState(false);
   const [credentialError, setCredentialError] = useState(false);
