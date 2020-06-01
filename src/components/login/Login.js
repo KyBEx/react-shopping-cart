@@ -10,8 +10,10 @@ export default function Login() {
   const history = useHistory();
 
   function onSubmit() {
+    setSubmitting(true);
     setMessage("There has been an error, as submit isnt connected");
     setOpen(true);
+    //need http call to server
   }
 
   function register() {
@@ -21,7 +23,11 @@ export default function Login() {
     <div className="App-background-container">
       {modal}
       <div className="App-form-container">
-        <img src={logo} className="App-image-size-big App-image-position" />
+        <img
+          src={logo}
+          className="App-image-size-big App-image-position"
+          alt="Please log in"
+        />
         <LoginForm
           onSubmit={onSubmit}
           submitting={submitting}

@@ -78,7 +78,7 @@ export default function useFormUtils(
     if (Object.keys(dynamicFormFields).length) {
       validFormFields.forEach((key) => {
         if (dynamicFormFields[key] !== false) {
-          registerWrapper[key]()
+          registerWrapper[key]();
         }
         // dynamicFormFields[key] === false ? null : registerWrapper[key]();
       });
@@ -90,6 +90,7 @@ export default function useFormUtils(
     return () => {
       unregister(validFormFields);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, updateUseEffect);
 
   // need to do work on validation, making the correct icons appear
@@ -106,7 +107,7 @@ export default function useFormUtils(
   }
 
   async function validate(event) {
-    const {target} = event;
+    const { target } = event;
     const { name } = target;
     if (target.parentNode.childNodes[1]) {
       target.parentNode.childNodes[1].style = "visibility: visible";
