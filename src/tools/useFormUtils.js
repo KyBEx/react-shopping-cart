@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 export default function useFormUtils(
   validFormFields = [],
@@ -94,35 +94,26 @@ export default function useFormUtils(
 
   // need to do work on validation, making the correct icons appear
   function onChange(event, { name, value }) {
-    // const { target } = event;
-    // if (target.parentNode.childNodes[1]) {
-    //   target.parentNode.childNodes[1].style = "visibility: hidden";
-    // }
-    // target.parentNode.childeNodes[2].style = "visibility: hidden";
+    const { target } = event;
+    if (target.parentNode.childNodes[1]) {
+      target.parentNode.childNodes[1].style = "visibility: hidden";
+    }
     setValue(name, value);
-    //triggering clearError on countryOfResidence to get component to re-render and state field to update
-    if (errors[name] || name === "countryOfResidence") {
+
+    if (errors[name]) {
       clearError(name);
     }
   }
 
   async function validate(event) {
-    const { name } = event.target;
+    const {target} = event;
+    const { name } = target;
+    if (target.parentNode.childNodes[1]) {
+      target.parentNode.childNodes[1].style = "visibility: visible";
+    }
     const valid = await triggerValidation(name);
     if (valid && formState.submitCount > 0) {
       //this is to trigger re-render on subsequent uses of form
-      clearError(name);
-    }
-  }
-
-  //fix this, or get rid of it
-  function onNumberChange(name, values) {
-    if (name === "phone") {
-      setValue(name, values);
-    } else {
-      setValue(name, values.floatValue);
-    }
-    if (errors[name]) {
       clearError(name);
     }
   }
@@ -139,7 +130,6 @@ export default function useFormUtils(
     onChange,
     togglePassword,
     showPassword,
-    onNumberChange,
     register,
     unregister,
     handleSubmit,
