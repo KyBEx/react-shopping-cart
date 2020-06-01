@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import LoginForm from "../forms/LoginForm";
+import {LoginForm} from "../forms";
 import logo from "../../assets/padlock.png"
 import Error from "../common/error/Error";
 export default function Login() {
@@ -10,6 +10,10 @@ export default function Login() {
     function onSubmit() {
         setMessage('There has been an error, as submit isnt connected');
         setOpen(true);
+    }
+
+    function register() {
+
     }
     return (
         <div className="App-background-container">
@@ -22,6 +26,9 @@ export default function Login() {
                 credentialError={credentialError}
                 setCredentialError={setCredentialError}
             />
+            <h2 onClick={register} className="login-links">
+        Register for an account
+      </h2>
             </div>
 
             </div>
