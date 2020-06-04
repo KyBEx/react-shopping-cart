@@ -54,6 +54,26 @@ export default function useFormUtils(
         }
       );
     },
+    confirmPassword: () => {
+      register(
+        { name: "confirmPassword" },
+        {
+          required: { value: true, message: "Please confirm password" },
+          pattern: {
+            // eslint-disable-next-line no-control-regex
+            value: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&_-])[A-Za-z\d@$!%*?&_-]{8,}$/,
+            message:
+              "Please enter a password at least 8 characters long and contains at least one lowercase, uppercase, and special character",
+          },
+          validate: {
+            equalToPassword: (value) =>
+              value === getValues()["password"]
+                ? true
+                : "The password fields do not match",
+          },
+        }
+      );
+    },
     firstName: () => {
       register(
         { name: "firstName" },
@@ -112,7 +132,10 @@ export default function useFormUtils(
     if (target.parentNode.childNodes[1]) {
       target.parentNode.childNodes[1].style = "visibility: visible";
     }
+    console.log("triggering validation for", name);
     const valid = await triggerValidation(name);
+    console.log("valid", valid);
+    console.log("formstate.submitCount", formState.submitCount);
     if (valid && formState.submitCount > 0) {
       //this is to trigger re-render on subsequent uses of form
       clearError(name);

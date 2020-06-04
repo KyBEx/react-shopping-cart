@@ -21,6 +21,7 @@ const TextInput = ({
   className,
 }) => {
   let errorId = `error-${error.type}`;
+  console.log("muh error", error);
   return (
     <>
       <div>
@@ -45,7 +46,8 @@ const TextInput = ({
               <Icon name="times circle" className="form-field-invalid-icon" />
             ) : valid ? (
               <Icon name="check circle" className="form-field-valid-icon" />
-            ) : name === "password" && !showPassword ? (
+            ) : (name === "password" || name === "confirmPassword") &&
+              !showPassword ? (
               <Icon
                 style={{
                   cursor: "pointer",
@@ -57,7 +59,8 @@ const TextInput = ({
                 }}
                 name="eye"
               />
-            ) : name === "password" && showPassword ? (
+            ) : (name === "password" || name === "confirmPassword") &&
+              showPassword ? (
               <Icon
                 style={{
                   cursor: "pointer",
