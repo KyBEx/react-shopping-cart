@@ -41,6 +41,28 @@
   color: #61dafb;
 }
 
+.App-form-container {
+  margin: 0 auto;
+  padding-top: 4rem;
+  max-width: 23rem;
+}
+
+.App-background-container {
+  text-align: center;
+  padding-bottom: 3em;
+  background: cornflowerblue;
+  height: 100%;
+}
+
+.App-image-size-big {
+  height: 10rem;
+}
+
+.App-image-position {
+  position: relative;
+  left: 15px;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

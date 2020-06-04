@@ -1,14 +1,17 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import Navbar from "./components/navbar/Navbar"
+import React from "react";
+import "./App.css";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Login, Register } from "./components";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <Navbar />
-    </div>
+    <Router>
+      <Switch>
+        <Route path="/" exact component={Login} />
+        <Route path="/register" component={Register} />
+      </Switch>
+    </Router>
   );
-}
+};
 
 export default App;

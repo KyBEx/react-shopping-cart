@@ -1,0 +1,26 @@
+.error-modal {
+    height: 25rem;
+    max-width: 23rem;
+  }
+  
+  .error-image {
+    margin: 0 auto;
+  }
+  
+  .error-modal-container {
+    text-align: center;
+    padding-top: 2rem;
+  }
+  
+  .error-modal-header {
+    padding-top: 1rem;
+  }
+  
+  .error-modal-content {
+  }
+  
+  .error-modal-content + .error-modal-button {
+    margin-top: 2rem;
+    width: 10rem;
+  }
+  
