@@ -14,6 +14,7 @@ const TextInput = ({
   id,
   showPassword = false,
   toggleShowPassword,
+  toggleShowConfirmPassword,
   maxLength,
   defaultValue,
   error = {},
@@ -21,7 +22,6 @@ const TextInput = ({
   className,
 }) => {
   let errorId = `error-${error.type}`;
-  console.log("muh error", error);
   return (
     <>
       <div>
@@ -44,8 +44,6 @@ const TextInput = ({
           icon={
             error.message ? (
               <Icon name="times circle" className="form-field-invalid-icon" />
-            ) : valid ? (
-              <Icon name="check circle" className="form-field-valid-icon" />
             ) : (name === "password" || name === "confirmPassword") &&
               !showPassword ? (
               <Icon
@@ -55,7 +53,9 @@ const TextInput = ({
                 }}
                 onMouseDown={(e) => {
                   e.preventDefault();
-                  toggleShowPassword();
+                  name === "password"
+                    ? toggleShowPassword()
+                    : toggleShowConfirmPassword();
                 }}
                 name="eye"
               />
@@ -68,10 +68,14 @@ const TextInput = ({
                 }}
                 onMouseDown={(e) => {
                   e.preventDefault();
-                  toggleShowPassword();
+                  name === "password"
+                    ? toggleShowPassword()
+                    : toggleShowConfirmPassword();
                 }}
                 name="eye slash outline"
               />
+            ) : valid ? (
+              <Icon name="check circle" className="form-field-valid-icon" />
             ) : (
               <></>
             )
@@ -103,6 +107,7 @@ TextInput.propTypes = {
   error: PropTypes.object,
   showPassword: PropTypes.bool,
   toggleShowPassword: PropTypes.func,
+  toggleShowConfirmPassword: PropTypes.func,
   maxLength: PropTypes.string,
   defaultValue: PropTypes.string,
   action: PropTypes.object,

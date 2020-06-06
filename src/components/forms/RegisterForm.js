@@ -19,22 +19,25 @@ export default function RegisterForm({
   }
 
   function toggleShowPassword() {
-    // const element = document.getElementById("login-form-password");
-    // if (element.getAttribute("type") === "password") {
-    //   element.setAttribute("type", "text");
-    // } else {
-    //   element.setAttribute("type", "password");
-    // }
-    // form.togglePassword();
-    const elements = document.querySelectorAll("input[type='password']");
-    elements.forEach((element) =>
-      element.getAttribute("type") === "password"
-        ? element.setAttribute("type", "text")
-        : element.setAttribute("type", "password")
-    );
+    const element = document.getElementById("register-form-password");
+    if (element.getAttribute("type") === "password") {
+      element.setAttribute("type", "text");
+    } else {
+      element.setAttribute("type", "password");
+    }
     form.togglePassword();
   }
-  console.log("form.errors", form.errors);
+
+  function toggleShowConfirmPassword() {
+    const element = document.getElementById("register-form-confirm-password");
+    if (element.getAttribute("type") === "password") {
+      element.setAttribute("type", "text");
+    } else {
+      element.setAttribute("type", "password");
+    }
+    form.toggleConfirmPassword();
+  }
+
   return (
     <div>
       <h2 className="title-color">Register for an account</h2>
@@ -89,8 +92,8 @@ export default function RegisterForm({
                 ? true
                 : false
             }
-            toggleShowPassword={toggleShowPassword}
-            showPassword={form.showPassword}
+            toggleShowConfirmPassword={toggleShowConfirmPassword}
+            showPassword={form.showConfirmPassword}
             type="password"
           />
         </Form.Field>

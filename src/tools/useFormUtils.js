@@ -8,6 +8,7 @@ export default function useFormUtils(
 ) {
   const [isVisible, setIsVisible] = useState(dynamicFormFields);
   const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [formFieldValues, setFormFieldValues] = useState(defaultValues);
   const {
     register,
@@ -116,11 +117,18 @@ export default function useFormUtils(
   // need to do work on validation, making the correct icons appear
   function onChange(event, { name, value }) {
     const { target } = event;
-    if (target.parentNode.childNodes[1]) {
+
+    if (
+      target.parentNode.childNodes[1] &&
+      Array.from(target.parentNode.childNodes[1].classList).includes(
+        "circle"
+      ) &&
+      name !== "password" &&
+      name !== "confirmPassword"
+    ) {
       target.parentNode.childNodes[1].style = "visibility: hidden";
     }
     setValue(name, value);
-
     if (errors[name]) {
       clearError(name);
     }
@@ -129,13 +137,14 @@ export default function useFormUtils(
   async function validate(event) {
     const { target } = event;
     const { name } = target;
-    if (target.parentNode.childNodes[1]) {
+    if (
+      target.parentNode.childNodes[1] &&
+      name !== "password" &&
+      name !== "confirmPassword"
+    ) {
       target.parentNode.childNodes[1].style = "visibility: visible";
     }
-    console.log("triggering validation for", name);
     const valid = await triggerValidation(name);
-    console.log("valid", valid);
-    console.log("formstate.submitCount", formState.submitCount);
     if (valid && formState.submitCount > 0) {
       //this is to trigger re-render on subsequent uses of form
       clearError(name);
@@ -146,6 +155,10 @@ export default function useFormUtils(
     setShowPassword(!showPassword);
   }
 
+  function toggleConfirmPassword() {
+    setShowConfirmPassword(!showConfirmPassword);
+  }
+
   return {
     isVisible,
     formFieldValues,
@@ -153,7 +166,9 @@ export default function useFormUtils(
     setIsVisible,
     onChange,
     togglePassword,
+    toggleConfirmPassword,
     showPassword,
+    showConfirmPassword,
     register,
     unregister,
     handleSubmit,
