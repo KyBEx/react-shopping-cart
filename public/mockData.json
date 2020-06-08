@@ -1,0 +1,74 @@
+{
+  "items": [
+    {
+      "id": 1,
+      "category": "Laptop",
+      "brand": "Dell",
+      "model": "Inspiron",
+      "year": 2020,
+      "cost": 1200,
+      "image": "../../assets/dell_lap.jpeg",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur"
+    },
+    {
+      "id": 2,
+      "category": "Laptop",
+      "brand": "Dell",
+      "model": "Inspiron 20x",
+      "year": 2020,
+      "cost": 3000,
+      "image": "../../assets/dell_lap.jpeg",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur"
+    },
+    {
+      "id": 3,
+      "category": "Laptop",
+      "brand": "Apple",
+      "model": "Macbook Pro",
+      "year": 2019,
+      "cost": 2000,
+      "image": "../../assets/macpro.jpeg",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur"
+    },
+    {
+      "id": 4,
+      "category": "Desktop",
+      "brand": "HP",
+      "model": "Something",
+      "year": 2020,
+      "cost": 600,
+      "image": "../../assets/dell_desk.jpeg",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur"
+    },
+    {
+      "id": 5,
+      "category": "Phone",
+      "brand": "Samsung",
+      "model": "S7",
+      "year": 2020,
+      "cost": 600,
+      "image": "../../assets/samsung.jpeg",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur"
+    },
+    {
+      "id": 6,
+      "category": "Phone",
+      "brand": "Apple",
+      "model": "IPhone XX",
+      "year": 2020,
+      "cost": 2000,
+      "image": "../../assets/iphone.jpeg",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur"
+    },
+    {
+      "id": 7,
+      "category": "Computer/Accessory",
+      "brand": "Razor",
+      "model": "7SLR Mouse",
+      "year": 2020,
+      "cost": 30.99,
+      "image": "../../assets/mouse.jpeg",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur"
+    }
+  ]
+}

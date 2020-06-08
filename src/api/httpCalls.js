@@ -1,7 +1,10 @@
 export function loadCart() {
   return new Promise((resolve) => {
-    fetch("../tools/mockData.json").then((data) => {
-      console.log("data in fetch", data);
-    });
+    fetch("../mockData")
+      .then((data) => {
+        console.log(data);
+      })
+      .then((data) => console.log("data", data))
+      .catch((err) => console.log("err", err));
   });
 }

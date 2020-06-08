@@ -1,7 +1,22 @@
-import React from "react";
-import { loadCart } from "./api";
+import React, { useEffect, useState } from "react";
 
 export default function Cart() {
-  loadCart();
-  return <div></div>;
+  const [items, setItems] = useState({});
+  useEffect(() => {
+    fetch("./mockData.json")
+      .then((response) => response.json())
+      .then((response) => {
+        const itemHash = {};
+        response.items.forEach((item) => {
+          if (itemHash[item.id]) {
+            itemHash[item.id].count += 1;
+          } else {
+            item.count = 1;
+            itemHash[item.id] = item;
+          }
+        });
+        setItems(Object.values(itemHash));
+      });
+  }, []);
+  return <></>;
 }
