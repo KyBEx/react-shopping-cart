@@ -31,6 +31,12 @@ export default function Cart() {
     });
     setItems(newItems);
   }
+
+  function removeFromCart(itemId) {
+    const newItems = items.filter((item) => item.id !== itemId);
+    setItems(newItems);
+  }
+
   return (
     <div>
       {items.map((item) => (
@@ -55,7 +61,7 @@ export default function Cart() {
             />
           </div>
           <div>
-            <Button>REMOVE</Button>
+            <Button onClick={() => removeFromCart(item.id)}>REMOVE</Button>
           </div>
         </div>
       ))}
