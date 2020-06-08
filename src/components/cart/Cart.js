@@ -20,10 +20,21 @@ export default function Cart() {
         setItems(Object.values(itemHash));
       });
   }, []);
+
+  function changeCount(e, itemId) {
+    const { value } = e.target;
+    const newItems = items.map((item) => {
+      if (item.id === itemId) {
+        item.count = Number(value.replace(/\D/, ""));
+      }
+      return item;
+    });
+    setItems(newItems);
+  }
   return (
     <div>
       {items.map((item) => (
-        <div className="cart-item-display">
+        <div key={item.id} className="cart-item-display">
           <div className="cart-image-display">
             <img src={item.image} />
           </div>
@@ -31,7 +42,18 @@ export default function Cart() {
             {item.brand} {item.model} {item.year}
           </div>
           <div className="cart-cost-display">{item.cost}</div>
-          <div className="cart-count-display">{item.count}</div>
+          <div className="cart-count-display">
+            <input
+              className="cart-count-display"
+              type="number"
+              min="1"
+              step="1"
+              value={item.count}
+              onChange={(e) => {
+                changeCount(e, item.id);
+              }}
+            />
+          </div>
           <div>
             <Button>REMOVE</Button>
           </div>
