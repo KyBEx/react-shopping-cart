@@ -37,34 +37,49 @@ export default function Cart() {
     setItems(newItems);
   }
 
+  function checkOut() {
+    console.log("checking");
+    if (!localStorage.getItem("user")) {
+    }
+  }
+
   return (
     <div>
-      {items.map((item) => (
-        <div key={item.id} className="cart-item-display">
-          <div className="cart-image-display">
-            <img src={item.image} />
+      {items.length && (
+        <>
+          <div className="cart-item-display">
+            <div>
+              Total{" "}
+              {items.reduce((prev, curr) => prev + curr.cost * curr.count, 0)}
+            </div>
+            <Button onClick={checkOut}>CHECKOUT</Button>
           </div>
-          <div className="cart-info-display">
-            {item.brand} {item.model} {item.year}
-          </div>
-          <div className="cart-cost-display">{item.cost}</div>
-          <div className="cart-count-display">
-            <input
-              className="cart-count-display"
-              type="number"
-              min="1"
-              step="1"
-              value={item.count}
-              onChange={(e) => {
-                changeCount(e, item.id);
-              }}
-            />
-          </div>
-          <div>
-            <Button onClick={() => removeFromCart(item.id)}>REMOVE</Button>
-          </div>
-        </div>
-      ))}
+          {items.map((item) => (
+            <div key={item.id} className="cart-item-display">
+              <div className="cart-info-display">
+                {item.brand} {item.model} {item.year}
+              </div>
+              <div className="cart-cost-display">{item.cost}</div>
+              <div className="cart-count-display">
+                <input
+                  className="cart-count-display"
+                  type="number"
+                  min="1"
+                  step="1"
+                  value={item.count}
+                  onChange={(e) => {
+                    changeCount(e, item.id);
+                  }}
+                />
+              </div>
+              <div>
+                <Button onClick={() => removeFromCart(item.id)}>REMOVE</Button>
+              </div>
+            </div>
+          ))}
+        </>
+      )}
+      {!items.length && <div>Your cart is empty!</div>}
     </div>
   );
 }
