@@ -1,0 +1,25 @@
+.cart-item-display {
+  display: flex;
+  justify-content: space-evenly;
+  line-height: 3;
+}
+
+.cart-image-display {
+  width: 5rem;
+}
+
+.cart-info-display {
+  width: 15rem;
+}
+
+.cart-cost-display {
+  width: 5rem;
+}
+
+.cart-count-display {
+  width: 5rem;
+}
+
+.cart-btn-display {
+  width: 10rem;
+}
